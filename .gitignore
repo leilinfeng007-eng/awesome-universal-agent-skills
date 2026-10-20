@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+__pycache__/
+.venv/
+node_modules/
+private/
+review/
+downloads/
+vendor/
+tmp/
