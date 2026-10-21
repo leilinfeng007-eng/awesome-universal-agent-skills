@@ -19,7 +19,10 @@
       "minLength": 1
     },
     "schema_version": {
-      "const": "1.0.0"
+      "enum": [
+        "1.0.0",
+        "1.1.0"
+      ]
     },
     "project": {
       "const": "awesome-universal-agent-skills"
@@ -148,7 +151,10 @@
               "data",
               "development",
               "automation",
-              "agent"
+              "agent",
+              "research",
+              "security",
+              "design"
             ]
           },
           "recommendation": {
@@ -227,7 +233,9 @@
               "skill_expression": {
                 "enum": [
                   "MIT",
-                  "Apache-2.0"
+                  "Apache-2.0",
+                  "CC-BY-SA-4.0",
+                  "Proprietary"
                 ]
               },
               "skill_license_url": {
@@ -352,6 +360,13 @@
                 }
               }
             }
+          },
+          "navigation_scope": {
+            "type": "string",
+            "enum": [
+              "restricted_reference"
+            ],
+            "description": "Optional restrictive navigation scope. These entries provide original commentary and upstream links only; no source extraction, external installation/execution, or redistribution authorization is granted."
           }
         }
       }
