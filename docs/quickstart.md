@@ -45,6 +45,10 @@ Skill 不是独立 App，也不会在添加后自动完成所有工作。你仍�
 | Codex CLI | 已能在终端启动的 CLI、可用账号与项目文件访问权限 | [Codex CLI 操作路径](client-guides.md#codex-cli) |
 | Claude Code | 已可用的客户端与账号/模型服务、一个练习项目 | [Claude Code 独立教程](client-guides.md#claude-code) |
 | OpenCode | 已可用的客户端和 Provider、允许读取 Skill 的会话 | [OpenCode 独立教程](client-guides.md#opencode) |
+| Kimi Code CLI / Desktop | 现行客户端可用；项目目录路线有 Git 根条件 | [Kimi Code 步骤](client-guides.md#kimi-code)，不套用网页聊天或旧版目录 |
+| Qoder IDE / CLI | 对应产品可用，项目与用户入口无冲突 | [Qoder 步骤](client-guides.md#qoder) |
+| QoderWork | 有独立技能导入入口和合法单项材料 | [QoderWork 步骤](client-guides.md#qoderwork) |
+| WorkBuddy | 桌面客户端可用，技能包符合其导入要求 | [WorkBuddy 步骤](client-guides.md#workbuddy)；包格式未确认就先停，不随意压缩碰运气 |
 | 其他工具 | 先确认是否支持本地 Skill、导入或插件 | [现有机制资料](clients.md) |
 
 没有客户端？先到上述教程中的官方入口了解获取方式。不必为了一个 Skill 同时安装三个客户端；本项目也不代为安装、登录或改设置。客户端、模型调用、工具或第三方服务可能单独收费。

@@ -1,8 +1,10 @@
 # Agent Skills 精选库｜让 AI 助手掌握更专业的工作方法
 
-Agent Skills 是给 AI 助手的“专业工作手册”：把可复用的步骤、规则和资料交给它，用来排查错误、整理数据、制作内容等。本库精选 **32 项**，告诉你适合选谁、需要准备什么，以及如何开始。
+这里收集能解决实际问题的 Agent Skills：给 AI 的工作步骤、规则和配套资料。目的是让你为自己的任务找到值得用的那一项，再配置到正在使用的工具里，不必把整份清单全部安装。
 
-**先从下面的任务表选你要做的事。** 办公与数据用户看[不写代码的入门路径](docs/quickstart.md#everyday)；想亲手添加 Skill 的开发者看[Codex App 完整案例](docs/hands-on.md#create-readme)。你不用先学会 Git 或读源码；教程中的客户端操作仍待实际环境验证。
+**按这条路走：[找任务](#tasks) → [看用途与条件](docs/usage.md) → [获取文件](docs/installation.md#get-files) → [选你的 AI 工具](docs/client-guides.md#platform-picker) → [调用并核对结果](docs/quickstart.md#success)。**
+
+想快速搜索？打开[全量介绍](docs/usage.md)，按 `Ctrl + F`（Mac 为 `Command + F`），搜索“Excel、排障、论文、网页”等任务或英文名称。办公用户可先看[不写代码的路径](docs/quickstart.md#everyday)。
 
 > A curated guide to 32 Agent Skills: choose by task, follow beginner walkthroughs, and check actual loading and results. English readers: [client guide and official links](docs/client-guides.md#sources) · [pinned sources and details](docs/skills.md).
 
@@ -20,7 +22,13 @@ Agent Skills 是给 AI 助手的“专业工作手册”：把可复用的步骤
 | 查找论文、整理资料 | huggingface-papers 读取指定 AI 论文及关联信息 | [研究用途与边界](docs/usage.md#research) |
 | 检查代码安全 | security-best-practices 看常见写法；security-threat-model 看应用风险 | [安全选择](docs/usage.md#security) |
 
-每行都指向现有介绍或案例。Office、浏览器和绘图通常要额外工具，暂不能当作“复制一段话就装好”。Anthropic Office 三项只作受限参考。
+Office、浏览器和绘图通常需要额外工具。每项介绍会写清“可迁移的方法、工具前提、先适配或仅参考”，避免把找到入口当作已经能用。
+
+## 选你正在使用的 AI 工具
+
+[Codex App / CLI](docs/client-guides.md#codex-app) · [OpenCode](docs/client-guides.md#opencode) · [Kimi Code CLI / Desktop](docs/client-guides.md#kimi-code) · [Qoder IDE / CLI](docs/client-guides.md#qoder) · [QoderWork](docs/client-guides.md#qoderwork) · [WorkBuddy](docs/client-guides.md#workbuddy) · [Claude Code](docs/client-guides.md#claude-code)
+
+来源是 OpenAI 或 Anthropic，不等于只能在对应公司的客户端使用。反过来，客户端支持 Skill，也不保证所有脚本和工具都能运行。[具体产品、添加方式和调用入口](docs/client-guides.md#platform-picker)分别说明；Kimi 网页与 Kimi Code、Qoder 与 QoderWork 不混用。
 
 ## 第一次使用？选适合你的路线
 
@@ -28,20 +36,26 @@ Agent Skills 是给 AI 助手的“专业工作手册”：把可复用的步骤
 |---|---|---|
 | 我主要处理文档或数据，不写代码 | [普通用户入门](docs/quickstart.md#everyday) | 按任务选 Skill、判断是否需要额外工具；不要求先做编程练习 |
 | 我是开发者，想亲手添加一个 Skill | [Codex App 跟做案例](docs/hands-on.md#create-readme) | 获取固定文件、放入练习项目、请求加载并检查结果 |
-| 我已经选好 Skill，要查看客户端操作 | [客户端教程](docs/client-guides.md) | 选择 Codex App/CLI、Claude Code 或 OpenCode 的独立路径 |
+| 我已经选好 Skill，要配置到已有工具 | [客户端选择表](docs/client-guides.md#platform-picker) | 包括 Codex、OpenCode、Kimi、Qoder、QoderWork、WorkBuddy 等具体路径 |
 
 共同顺序是：**选任务 → 看条件 → 按客户端添加或使用已有能力 → 检查发现、加载和结果**。没有匹配工具时先停在条件确认，不必为了读本库安装一套开发环境。[怎么确认真的生效？](docs/quickstart.md#success)
 
-## 开发者可先练习的四项
+## 有对应需求时，先看这四项
 
-| Skill | 能帮什么 | 准备什么 / 谁适合 | 教程 |
+| Skill | 实际价值 | 使用条件 | 下一步 |
 |---|---|---|---|
-| create-readme | 给小项目写清楚的说明书 | 纯文本编辑器；第一次添加 Skill 的用户 | [Codex App 从零跟做](docs/hands-on.md#create-readme) |
-| systematic-debugging | 先找原因再改程序 | 项目已有复现工具；初级开发者 | [可复核的排障案例](docs/hands-on.md#systematic-debugging) |
-| verification-before-completion | 完成前核对真实证据 | 项目已有检查工具；开发与交付人员 | [故意失败的检查案例](docs/hands-on.md#verification-before-completion) |
-| security-threat-model | 看清应用资产、边界与风险 | 可读的项目源码；了解架构的开发者 | [只读威胁分析案例](docs/hands-on.md#security-threat-model) |
+| systematic-debugging | 先复现、找根因，减少猜着改代码 | 方法低依赖；需要已有复现工具，模型行为未实测 | [用途、获取与示例](docs/usage.md#obra--systematic-debugging) |
+| exploratory-data-analysis | 检查小型数据的缺失、重复、异常 | Python 3.11+；有限核心样例有结果，非原生 Excel 编辑 | [数据体检](docs/usage.md#k-dense-ai--exploratory-data-analysis) |
+| frontend-design | 为网页确定视觉方向与排版 | 不限定某个 AI 品牌；实现与视觉效果未实测 | [网页设计](docs/usage.md#anthropics--frontend-design) |
+| security-best-practices | 为支持的语言检查常见代码安全做法 | 有源码读取能力；不等于完整扫描或安全认证 | [只读安全审阅](docs/usage.md#openai--security-best-practices) |
 
-这是开发者的**可选学习顺序**，不改变原有推荐等级，也不表示教程已通过客户端测试。办公用户可直接进入下面的办公、数据目录。
+想先理解文件如何添加，可选 [create-readme 两文件练习](docs/hands-on.md#create-readme)；它是轻量写作参考，不代表每个人都需要单独安装。已有能力够用就不重复添加。
+
+## 这些资源的质量和通用性，能确认到哪一步？
+
+32 项都有原始来源、固定版本、用途、许可和限制记录，但它们包含方法、工具专项和参考资料，不能整体承诺“稳定即用”。已有运行证据主要是 EDA 的有限本地核心样例；本库全部条目都没有跨客户端端到端通过记录。
+
+选择时看三件事：**有没有独立实用价值、我的环境是否具备条件、结果能否核对**。方法型更容易迁移；工具型要准备依赖；路径/插件绑定项先适配；Anthropic Office 三项仅受限参考。推荐等级保持不变，[具体依据在这里](docs/validation.md)。
 
 ## 完整目录：32 项，八个领域
 

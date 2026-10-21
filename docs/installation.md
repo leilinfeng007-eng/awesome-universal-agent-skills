@@ -4,6 +4,56 @@
 
 这是手动选择指南，不是安装器或执行授权。收录不代表应安装全部资源，也不代表默认上游 setup 安全。本仓库不运行远程脚本、不批量安装、不自动更新或刷新任何客户端 Skill。
 
+<a id="get-files"></a>
+## 先拿对文件，再选客户端
+
+以下是固定来源的获取清单，不是自动安装器，也没有执行下载。你不需要读懂源码，但要保留完整单项目录及原许可；抄一段提示词不能代替它。
+
+1. 从[使用介绍](usage.md)进入本项清单，点“目标目录”。保留目标里的 SKILL.md 和存在的 references、scripts、模板等完整相对结构，不只拿入口漏资源。
+2. 单文件可在 GitHub 打开 Raw 纯文本后保存，方法见[两个文件的例子](hands-on.md#readme-files)。资源多的条目需完整单项材料；GitHub 目录页不是单目录下载按钮，本库尚未为每项提供独立发布包，不把链接当一键安装。
+3. 同时保留表中许可和存在的版权/NOTICE 通知。不默认下载整个合集：尤其 Anthropic 同仓含受限 Office，不能为一个可采用 Skill 获取不在允许范围的材料。
+4. 对照[客户端选择表](client-guides.md#platform-picker)放入对应项目目录或受控导入。保留上游文件，落地文件夹通常需匹配入口的 name；明确适配项先看详情。同名已存在就停止，不覆盖。
+5. 按[四步检查](quickstart.md#success)确认发现、正文、资源和结果。缺工具、配对不明或包格式未知，就停在对应门槛，不自动补装环境。
+
+工具条件满足，不等于本项目实测通过。下表沿用原推荐等级；对多资源或重依赖条目，获取和配置仍有准备成本，不能包装成零门槛。
+
+| Skill | 固定目标与许可 | 应保留什么 / 先确认什么 |
+|---|---|---|
+| <a id="fetch-k-dense-ai--exploratory-data-analysis"></a>exploratory-data-analysis | [目标目录](https://github.com/K-Dense-AI/scientific-agent-skills/tree/593377bb048752abb0152deab9fbb1083a6087df/skills/exploratory-data-analysis) · [许可](https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/LICENSE.md) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-obra--systematic-debugging"></a>systematic-debugging | [目标目录](https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/systematic-debugging) · [许可](https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/LICENSE) | 完整目标与根 LICENSE；保留参考资料，不运行附带脚本或安装框架 |
+| <a id="fetch-k-dense-ai--markitdown"></a>markitdown | [目标目录](https://github.com/K-Dense-AI/scientific-agent-skills/tree/593377bb048752abb0152deab9fbb1083a6087df/skills/markitdown) · [许可](https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/LICENSE.md) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-microsoft--playwright-cli"></a>playwright-cli | [配对状态](skills.md#microsoft--playwright-cli) | 未核定运行组合，先停在版本选择 |
+| <a id="fetch-anthropics--mcp-builder"></a>mcp-builder | [目标目录](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder) · [许可](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder/LICENSE.txt) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-k-dense-ai--matplotlib"></a>matplotlib | [目标目录](https://github.com/K-Dense-AI/scientific-agent-skills/tree/593377bb048752abb0152deab9fbb1083a6087df/skills/matplotlib) · [许可](https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/LICENSE.md) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-openai--gh-fix-ci"></a>gh-fix-ci | [目标目录](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/gh-fix-ci) · [许可](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/gh-fix-ci/LICENSE.txt) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-openai--pdf"></a>pdf (OpenAI) | [目标目录](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf) · [许可](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf/LICENSE.txt) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-openai--skill-creator"></a>skill-creator (OpenAI) | [目标目录](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.system/skill-creator) · [许可](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.system/skill-creator/LICENSE.txt) | 完整目标与许可；先处理路径/命名/引用适配，不承诺复制即用 |
+| <a id="fetch-github--create-readme"></a>create-readme | [目标目录](https://github.com/github/awesome-copilot/tree/613efc8c21d9b3ce642dff361d17006cd9967e28/skills/create-readme) · [许可](https://github.com/github/awesome-copilot/blob/613efc8c21d9b3ce642dff361d17006cd9967e28/LICENSE) | 固定 SKILL.md 与原 LICENSE；可照两个文件案例操作 |
+| <a id="fetch-obra--verification-before-completion"></a>verification-before-completion | [目标目录](https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/verification-before-completion) · [许可](https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/LICENSE) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-anthropics--frontend-design"></a>frontend-design | [目标目录](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design) · [许可](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/LICENSE.txt) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-openai--jupyter-notebook"></a>jupyter-notebook | [目标目录](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/jupyter-notebook) · [许可](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/jupyter-notebook/LICENSE.txt) | 完整目标与许可；先处理路径/命名/引用适配，不承诺复制即用 |
+| <a id="fetch-openai--security-best-practices"></a>security-best-practices | [目标目录](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-best-practices) · [许可](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-best-practices/LICENSE.txt) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-openai--security-threat-model"></a>security-threat-model | [目标目录](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model) · [许可](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/LICENSE.txt) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-huggingface--huggingface-papers"></a>huggingface-papers | [目标目录](https://github.com/huggingface/skills/tree/c3ff942be3e07116b475253f0a8fc4f54682c1a8/skills/huggingface-papers) · [许可](https://github.com/huggingface/skills/blob/c3ff942be3e07116b475253f0a8fc4f54682c1a8/LICENSE) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-huggingface--huggingface-gradio"></a>huggingface-gradio | [目标目录](https://github.com/huggingface/skills/tree/c3ff942be3e07116b475253f0a8fc4f54682c1a8/skills/huggingface-gradio) · [许可](https://github.com/huggingface/skills/blob/c3ff942be3e07116b475253f0a8fc4f54682c1a8/LICENSE) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-trailofbits--differential-review"></a>differential-review | [目标目录](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/differential-review/skills/differential-review) · [许可](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) | 完整目标、相对方法/查询资源和 CC BY-SA 通知；可选插件/扫描器不自动启用 |
+| <a id="fetch-trailofbits--codeql"></a>codeql | [目标目录](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/static-analysis/skills/codeql) · [许可](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) | 完整目标与 CC BY-SA 通知；必需 CodeQL CLI/查询包先核许可与版本，不自动安装或执行构建 |
+| <a id="fetch-trailofbits--property-based-testing"></a>property-based-testing | [目标目录](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/property-based-testing/skills/property-based-testing) · [许可](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) | 完整目标、相对方法/查询资源和 CC BY-SA 通知；可选插件/扫描器不自动启用 |
+| <a id="fetch-trailofbits--supply-chain-risk-auditor"></a>supply-chain-risk-auditor | [目标目录](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor) · [许可](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) | 完整目标、相对方法/查询资源和 CC BY-SA 通知；可选插件/扫描器不自动启用 |
+| <a id="fetch-trailofbits--agentic-actions-auditor"></a>agentic-actions-auditor | [目标目录](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/agentic-actions-auditor/skills/agentic-actions-auditor) · [许可](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) | 完整目标与许可；先处理路径/命名/引用适配，不承诺复制即用 |
+| <a id="fetch-trailofbits--variant-analysis"></a>variant-analysis | [目标目录](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/variant-analysis/skills/variant-analysis) · [许可](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) | 完整目标、相对方法/查询资源和 CC BY-SA 通知；可选插件/扫描器不自动启用 |
+| <a id="fetch-github--agent-architecture"></a>agent-architecture | [目标目录](https://github.com/github/awesome-copilot/tree/613efc8c21d9b3ce642dff361d17006cd9967e28/skills/agent-architecture) · [许可](https://github.com/github/awesome-copilot/blob/613efc8c21d9b3ce642dff361d17006cd9967e28/skills/agent-architecture/LICENSE.txt) | 完整目标及资源；按本项条件准备依赖，不运行 setup |
+| <a id="fetch-iofficeai--officecli-docx"></a>officecli-docx | [专项方案](#officecli) | 固定工具、自动安装/更新控制及版本差异先处理 |
+| <a id="fetch-iofficeai--officecli-xlsx"></a>officecli-xlsx | [专项方案](#officecli) | 固定工具、自动安装/更新控制及版本差异先处理 |
+| <a id="fetch-iofficeai--officecli-pptx"></a>officecli-pptx | [专项方案](#officecli) | 固定工具、自动安装/更新控制及版本差异先处理 |
+| <a id="fetch-vercel-labs--react-best-practices"></a>vercel-react-best-practices | [目标目录](https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices) · [许可](https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices/SKILL.md#L4) | 完整目标与许可；先处理路径/命名/引用适配，不承诺复制即用 |
+| <a id="fetch-vercel-labs--composition-patterns"></a>vercel-composition-patterns | [目标目录](https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/composition-patterns) · [许可](https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/composition-patterns/SKILL.md#L9) | 完整目标与许可；先处理路径/命名/引用适配，不承诺复制即用 |
+| <a id="fetch-anthropics--docx"></a>docx (Anthropic) | [仅原链参考](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/docx) | 专有受限，不进入获取、安装和执行路线 |
+| <a id="fetch-anthropics--xlsx"></a>xlsx (Anthropic) | [仅原链参考](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/xlsx) | 专有受限，不进入获取、安装和执行路线 |
+| <a id="fetch-anthropics--pptx"></a>pptx (Anthropic) | [仅原链参考](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pptx) | 专有受限，不进入获取、安装和执行路线 |
+
+获取材料后，按[客户端选择表](client-guides.md#platform-picker)继续。WorkBuddy 的包结构等未确认处保留缺口，不让用户猜；受限参考不参与这些步骤。
+
 ## 0. 先区分能做什么
 
 在 catalog.json 检查 recommendation、navigation_scope、license、adoption_gate 和 validation。
