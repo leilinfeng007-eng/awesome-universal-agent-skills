@@ -4,7 +4,7 @@
 
 **20 项认真选择的 Skill，8 项优先了解，12 项专项选择。** 不堆数量，不要求先学 Git，也不把“能添加”写成“已运行成功”。
 
-**[按任务找 ↓](#find) · [按 AI 工具找 ↓](#clients) · [第一次使用 ↓](#start) · [可搜索目录](#search)**
+**[按任务找 ↓](#find) · [在线搜索目录 ↗](https://leilinfeng007-eng.github.io/awesome-universal-agent-skills/) · [按 AI 工具找 ↓](#clients) · [第一次使用 ↓](#start)**
 
 想让 AI 改 Excel、排查错误、画图或做网页？这里帮你判断选谁、先准备什么，并在**一张卡片内**给出固定来源、添加路径、中文示例和撤销方法。下载的是原作者材料，本仓库不打包第三方 Skill。
 
