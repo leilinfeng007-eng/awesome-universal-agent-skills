@@ -1,8 +1,10 @@
 # 32 项 Skill：能做什么，怎么开始
 
-这页帮你按实际问题选择，而不是要求先读技术审计。每项给出中文用途、两个场景和可复制的任务正文；固定版本、许可和完整风险留在对应详情里。
+这页用于查找和选用：用下方分类，或按 Ctrl + F（macOS 为 Command + F）搜索“Excel”“排障”“论文”“网页”等中文任务或英文名称。每项串起用途、复用条件、获取入口、客户端步骤和示例。
 
 **先添加并确认加载，再用示例。** 下方中文只是任务描述，不是 Skill 调用语法。按[客户端教程](client-guides.md)选择或加载对应名称后再发送；受限参考三项只阅读介绍，不参与添加流程。
+
+来源公司和适用工具是两件事。“方法可迁移”是基于已审材料的判断，不是客户端已测；“先适配”和“专项采用”不能直接套用文本安装案例。
 
 当前证据有四种：有限本地核心样例、有上游材料但未本地验证、仅静态审阅、受限参考。上游示例/测试源码/评估设计不自动表示已经通过。所有 32 项客户端端到端运行均未验证；本轮不新增运行结论。
 
@@ -35,9 +37,11 @@
 
 **额外工具与限制：**需匹配 Python、MarkItDown 和所需转换器；这是 K-Dense 包装指南，不是 Microsoft 官方 Skill。不是保留 Office 版式的编辑器。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-k-dense-ai--markitdown) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[K-Dense Inc. / markitdown](https://github.com/K-Dense-AI/scientific-agent-skills/tree/593377bb048752abb0152deab9fbb1083a6087df/skills/markitdown) · [MIT](https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/LICENSE.md) · [版本、依赖与完整风险](skills.md#k-dense-ai--markitdown)。
 
@@ -58,9 +62,11 @@
 
 **额外工具与限制：**按任务准备 PDF 库、Poppler 与字体。此固定 GitHub 版本未运行；文字可提取不证明页面排版正确。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-openai--pdf) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[OpenAI / pdf](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf) · [Apache-2.0](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf/LICENSE.txt) · [版本、依赖与完整风险](skills.md#openai--pdf)。
 
@@ -81,9 +87,11 @@
 
 **额外工具与限制：**需固定 OfficeCLI 平台工具及查看器/字体；必须满足专门采用门槛。源与发行实现不同，未测格式保真，不是即装即用。
 
+**跨工具使用：**专项采用：先满足 OfficeCLI 固定版本、副作用控制与查看器条件，不进入普通文本 Skill 直接添加路线。
+
 **使用状态：**有上游底层 CLI 的限定 DOCX smoke 成功记录，非此格式 Skill 功能通过；本地与客户端未验证。
 
-**下一步：**尚未建立该项完整教程；先读 [OfficeCLI 采用门槛](installation.md#officecli)，不能直接照抄文本 Skill 案例。
+**下一步：**先看 [OfficeCLI 专项方案](installation.md#officecli)，版本与副作用条件满足前不配置到客户端。
 
 **原始来源与注意事项：**[iOfficeAI 原始维护仓库 / officecli-docx](https://github.com/iOfficeAI/OfficeCLI/tree/fb98e593612dee2cec36847666671dba502e60aa/skills/officecli-docx) · [Apache-2.0](https://github.com/iOfficeAI/OfficeCLI/blob/fb98e593612dee2cec36847666671dba502e60aa/LICENSE) · [版本、依赖与完整风险](skills.md#iofficeai--officecli-docx)。
 
@@ -104,9 +112,11 @@
 
 **额外工具与限制：**需固定 OfficeCLI；复杂公式、宏、外链和缓存须另验。尚无零基础完整安装案例，普通 EDA 不能代替它。
 
+**跨工具使用：**专项采用：先满足 OfficeCLI 固定版本、副作用控制与查看器条件，不进入普通文本 Skill 直接添加路线。
+
 **使用状态：**有上游底层 CLI 的限定 DOCX smoke 成功记录，非此格式 Skill 功能通过；本地与客户端未验证。
 
-**下一步：**尚未建立该项完整教程；先读 [OfficeCLI 采用门槛](installation.md#officecli)，不能直接照抄文本 Skill 案例。
+**下一步：**先看 [OfficeCLI 专项方案](installation.md#officecli)，版本与副作用条件满足前不配置到客户端。
 
 **原始来源与注意事项：**[iOfficeAI 原始维护仓库 / officecli-xlsx](https://github.com/iOfficeAI/OfficeCLI/tree/fb98e593612dee2cec36847666671dba502e60aa/skills/officecli-xlsx) · [Apache-2.0](https://github.com/iOfficeAI/OfficeCLI/blob/fb98e593612dee2cec36847666671dba502e60aa/LICENSE) · [版本、依赖与完整风险](skills.md#iofficeai--officecli-xlsx)。
 
@@ -127,9 +137,11 @@
 
 **额外工具与限制：**需固定 OfficeCLI 以及字体/目标查看器。动画、复杂母版和格式保真未实测；不自动安装或更新工具。
 
+**跨工具使用：**专项采用：先满足 OfficeCLI 固定版本、副作用控制与查看器条件，不进入普通文本 Skill 直接添加路线。
+
 **使用状态：**有上游底层 CLI 的限定 DOCX smoke 成功记录，非此格式 Skill 功能通过；本地与客户端未验证。
 
-**下一步：**尚未建立该项完整教程；先读 [OfficeCLI 采用门槛](installation.md#officecli)，不能直接照抄文本 Skill 案例。
+**下一步：**先看 [OfficeCLI 专项方案](installation.md#officecli)，版本与副作用条件满足前不配置到客户端。
 
 **原始来源与注意事项：**[iOfficeAI 原始维护仓库 / officecli-pptx](https://github.com/iOfficeAI/OfficeCLI/tree/fb98e593612dee2cec36847666671dba502e60aa/skills/officecli-pptx) · [Apache-2.0](https://github.com/iOfficeAI/OfficeCLI/blob/fb98e593612dee2cec36847666671dba502e60aa/LICENSE) · [版本、依赖与完整风险](skills.md#iofficeai--officecli-pptx)。
 
@@ -150,9 +162,11 @@
 
 **额外工具与限制：**仅供受限参考；实际使用取决于适用服务合同，不提供外部安装/执行路线或源码包。
 
+**跨工具使用：**受限参考：不参与 Codex、OpenCode、Kimi、Qoder、WorkBuddy 等外部客户端的获取、安装和执行路线。
+
 **使用状态：**仅供受限参考；只有静态资料，不提供安装方案，未做功能或客户端运行。
 
-**下一步：**只读原始来源与许可；不提供安装/执行教程。
+**下一步：**只读原始来源与许可，不提供获取、安装或执行步骤。
 
 **原始来源与注意事项：**[anthropics 原始维护仓库 / docx](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/docx) · [Proprietary](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/docx/LICENSE.txt) · [版本、依赖与完整风险](skills.md#anthropics--docx)。
 
@@ -173,9 +187,11 @@
 
 **额外工具与限制：**专有许可与服务合同适用；仅供受限参考，不因收录而获得下载、改编、商业执行或再分发权。
 
+**跨工具使用：**受限参考：不参与 Codex、OpenCode、Kimi、Qoder、WorkBuddy 等外部客户端的获取、安装和执行路线。
+
 **使用状态：**仅供受限参考；只有静态资料，不提供安装方案，未做功能或客户端运行。
 
-**下一步：**只读原始来源与许可；不提供安装/执行教程。
+**下一步：**只读原始来源与许可，不提供获取、安装或执行步骤。
 
 **原始来源与注意事项：**[anthropics 原始维护仓库 / xlsx](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/xlsx) · [Proprietary](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/xlsx/LICENSE.txt) · [版本、依赖与完整风险](skills.md#anthropics--xlsx)。
 
@@ -196,9 +212,11 @@
 
 **额外工具与限制：**仅供受限参考；不提供跨客户端安装执行路线，服务合同和素材/字体条款须独立确认。
 
+**跨工具使用：**受限参考：不参与 Codex、OpenCode、Kimi、Qoder、WorkBuddy 等外部客户端的获取、安装和执行路线。
+
 **使用状态：**仅供受限参考；只有静态资料，不提供安装方案，未做功能或客户端运行。
 
-**下一步：**只读原始来源与许可；不提供安装/执行教程。
+**下一步：**只读原始来源与许可，不提供获取、安装或执行步骤。
 
 **原始来源与注意事项：**[anthropics 原始维护仓库 / pptx](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pptx) · [Proprietary](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pptx/LICENSE.txt) · [版本、依赖与完整风险](skills.md#anthropics--pptx)。
 
@@ -222,9 +240,11 @@
 
 **额外工具与限制：**需 Python 3.11+；已知小样例仅限标准库核心。不会原生处理任意 XLSX 模板，分组求和不是该核心功能。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**已有有限本地核心合成样例记录（16 次调用、41 项核对）；非完整 Skill/Excel/大文件验证；客户端未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-k-dense-ai--exploratory-data-analysis) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[K-Dense Inc. / exploratory-data-analysis](https://github.com/K-Dense-AI/scientific-agent-skills/tree/593377bb048752abb0152deab9fbb1083a6087df/skills/exploratory-data-analysis) · [MIT](https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/LICENSE.md) · [版本、依赖与完整风险](skills.md#k-dense-ai--exploratory-data-analysis)。
 
@@ -245,9 +265,11 @@
 
 **额外工具与限制：**需 Python/Matplotlib，部分脚本另需 NumPy/SciPy/cycler。字体、渲染和可选依赖未验证；保存图片可能覆盖旧文件。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-k-dense-ai--matplotlib) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[K-Dense Inc. / matplotlib](https://github.com/K-Dense-AI/scientific-agent-skills/tree/593377bb048752abb0152deab9fbb1083a6087df/skills/matplotlib) · [MIT](https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/LICENSE.md) · [版本、依赖与完整风险](skills.md#k-dense-ai--matplotlib)。
 
@@ -268,9 +290,11 @@
 
 **额外工具与限制：**脚手架需 Python，执行另需内核及项目依赖；上游 CODEX_HOME 路径需适配，不自动 force 或执行不可信单元。
 
+**跨工具使用：**先适配：CODEX_HOME 路径需映射，脚手架与实际执行内核依赖分开；不是复制后自动运行。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**先核[本项适配条件](skills.md#openai--jupyter-notebook)，再看[目标材料](installation.md#fetch-openai--jupyter-notebook)及[客户端入口](client-guides.md#platform-picker)；获取不表示适配完成。
 
 **原始来源与注意事项：**[openai 原始维护仓库 / jupyter-notebook](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/jupyter-notebook) · [Apache-2.0](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/jupyter-notebook/LICENSE.txt) · [版本、依赖与完整风险](skills.md#openai--jupyter-notebook)。
 
@@ -294,9 +318,11 @@
 
 **额外工具与限制：**文本核心无需新包；运行复现要用项目已有工具。不自动执行附带脚本或补装 Superpowers。
 
+**跨工具使用：**方法可迁移：不强制某个 AI 品牌；目标工具须能读取所需文件、提供任务工具与权限。具体组合未运行验证。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**[完整练习草案](hands-on.md#systematic-debugging)（待实测）。
+**下一步：**[获取这一项的材料](installation.md#fetch-obra--systematic-debugging) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例；也可跟做[练习草案](hands-on.md#systematic-debugging)。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[obra / Superpowers 项目 / systematic-debugging](https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/systematic-debugging) · [MIT](https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/LICENSE) · [版本、依赖与完整风险](skills.md#obra--systematic-debugging)。
 
@@ -317,9 +343,11 @@
 
 **额外工具与限制：**需 Git、已授权 gh、Python 与网络；不自动登录。它不是覆盖所有 CI 的通用修复器，改代码需授权。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-openai--gh-fix-ci) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[OpenAI / gh-fix-ci](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/gh-fix-ci) · [Apache-2.0](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/gh-fix-ci/LICENSE.txt) · [版本、依赖与完整风险](skills.md#openai--gh-fix-ci)。
 
@@ -340,9 +368,11 @@
 
 **额外工具与限制：**纯文本核心不需额外软件；只读取授权项目。上游远端范例会变化，本教程禁止默认联网或扫描无关工作区。
 
+**跨工具使用：**轻量写作参考，适合练习添加；已有写作能力满足需求时不必单独注册，不把它当生产力最强的代表。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**[完整练习草案](hands-on.md#create-readme)（待实测）。
+**下一步：**[获取这一项的材料](installation.md#fetch-github--create-readme) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例；也可跟做[练习草案](hands-on.md#create-readme)。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[GitHub awesome-copilot 社区贡献者 / create-readme](https://github.com/github/awesome-copilot/tree/613efc8c21d9b3ce642dff361d17006cd9967e28/skills/create-readme) · [MIT](https://github.com/github/awesome-copilot/blob/613efc8c21d9b3ce642dff361d17006cd9967e28/LICENSE) · [版本、依赖与完整风险](skills.md#github--create-readme)。
 
@@ -363,9 +393,11 @@
 
 **额外工具与限制：**按语言使用项目已有框架；不强制新装 Hypothesis 等包。运行测试会执行项目代码，上游评估设计不等于通过记录。
 
+**跨工具使用：**方法可迁移，但 effort 扩展字段须由目标客户端容忍或适配；测试框架由项目提供，不自动新增依赖。
+
 **使用状态：**有上游材料，但未进行本地验证；材料类型与范围见详情，不表示上游或客户端测试通过。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-trailofbits--property-based-testing) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[trailofbits 原始维护仓库 / property-based-testing](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/property-based-testing/skills/property-based-testing) · [CC-BY-SA-4.0](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) · [版本、依赖与完整风险](skills.md#trailofbits--property-based-testing)。
 
@@ -389,9 +421,11 @@
 
 **额外工具与限制：**需要 Node、配套 CLI 和浏览器。当前固定 Skill 与候选 CLI 尚未形成验证过的配对；本页不提供直接安装路线。
 
+**跨工具使用：**先核工具配对：尚无已验证的 Skill/CLI 组合，不进入直接配置路线。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**先核[工具配对缺口](skills.md#microsoft--playwright-cli)，没有可照抄的已验证安装组合。
 
 **原始来源与注意事项：**[Microsoft / Playwright CLI 项目 / playwright-cli](https://github.com/microsoft/playwright-cli/tree/b1a5903c5b633b8c9f843ad7b629c2a78437040c/skills/playwright-cli) · [Apache-2.0](https://github.com/microsoft/playwright-cli/blob/b1a5903c5b633b8c9f843ad7b629c2a78437040c/LICENSE) · [版本、依赖与完整风险](skills.md#microsoft--playwright-cli)。
 
@@ -415,9 +449,11 @@
 
 **额外工具与限制：**阅读无需新包；实现需要所选 SDK 和 API 授权。它不是现成连接器；浮动 SDK 示例不是依赖锁。
 
+**跨工具使用：**方法可迁移：不强制某个 AI 品牌；目标工具须能读取所需文件、提供任务工具与权限。具体组合未运行验证。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-anthropics--mcp-builder) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[Anthropic / mcp-builder](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder) · [Apache-2.0](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder/LICENSE.txt) · [版本、依赖与完整风险](skills.md#anthropics--mcp-builder)。
 
@@ -438,9 +474,11 @@
 
 **额外工具与限制：**阅读无需新包；辅助脚本可能需 Python/PyYAML。固定验证器会误拒部分合法字段，不是开放标准的唯一判据。
 
+**跨工具使用：**先适配：Codex 路径/界面元数据及辅助验证器有已知缺口；不能把其他客户端或内置同名项当此固定版本已测。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**先核[本项适配条件](skills.md#openai--skill-creator)，再看[目标材料](installation.md#fetch-openai--skill-creator)及[客户端入口](client-guides.md#platform-picker)；获取不表示适配完成。
 
 **原始来源与注意事项：**[OpenAI / skill-creator](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.system/skill-creator) · [Apache-2.0](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.system/skill-creator/LICENSE.txt) · [版本、依赖与完整风险](skills.md#openai--skill-creator)。
 
@@ -461,9 +499,11 @@
 
 **额外工具与限制：**文本核心无新包；检查工具来自项目。验证命令可能有副作用，它不是不可绕过的自动门禁。
 
+**跨工具使用：**方法可迁移：不强制某个 AI 品牌；目标工具须能读取所需文件、提供任务工具与权限。具体组合未运行验证。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**[完整练习草案](hands-on.md#verification-before-completion)（待实测）。
+**下一步：**[获取这一项的材料](installation.md#fetch-obra--verification-before-completion) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例；也可跟做[练习草案](hands-on.md#verification-before-completion)。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[obra / Superpowers 项目 / verification-before-completion](https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/verification-before-completion) · [MIT](https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/LICENSE) · [版本、依赖与完整风险](skills.md#obra--verification-before-completion)。
 
@@ -484,9 +524,11 @@
 
 **额外工具与限制：**文本方案无需新服务；默认 PDF/可视化另需工具，可明确要求仅文本。资料多，成本与长期有效性待验证。
 
+**跨工具使用：**方法可迁移：不强制某个 AI 品牌；目标工具须能读取所需文件、提供任务工具与权限。具体组合未运行验证。
+
 **使用状态：**有上游材料，但未进行本地验证；材料类型与范围见详情，不表示上游或客户端测试通过。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-github--agent-architecture) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[Stanislav Bankovskii；github/awesome-copilot 社区贡献 / agent-architecture](https://github.com/github/awesome-copilot/tree/613efc8c21d9b3ce642dff361d17006cd9967e28/skills/agent-architecture) · [MIT](https://github.com/github/awesome-copilot/blob/613efc8c21d9b3ce642dff361d17006cd9967e28/skills/agent-architecture/LICENSE.txt) · [版本、依赖与完整风险](skills.md#github--agent-architecture)。
 
@@ -510,9 +552,11 @@
 
 **额外工具与限制：**需 HTTP/curl 或等效读取能力；公共读取不先索取令牌。不是综合文献检索或事实核查系统，论文许可独立。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-huggingface--huggingface-papers) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[huggingface 原始维护仓库 / huggingface-papers](https://github.com/huggingface/skills/tree/c3ff942be3e07116b475253f0a8fc4f54682c1a8/skills/huggingface-papers) · [Apache-2.0](https://github.com/huggingface/skills/blob/c3ff942be3e07116b475253f0a8fc4f54682c1a8/LICENSE) · [版本、依赖与完整风险](skills.md#huggingface--huggingface-papers)。
 
@@ -536,9 +580,11 @@
 
 **额外工具与限制：**需源码及框架信息；覆盖语言/框架有限。修改代码、运行扫描或扩大范围另需授权。
 
+**跨工具使用：**方法可迁移：不强制某个 AI 品牌；目标工具须能读取所需文件、提供任务工具与权限。具体组合未运行验证。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-openai--security-best-practices) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[openai 原始维护仓库 / security-best-practices](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-best-practices) · [Apache-2.0](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-best-practices/LICENSE.txt) · [版本、依赖与完整风险](skills.md#openai--security-best-practices)。
 
@@ -559,9 +605,11 @@
 
 **额外工具与限制：**文本与源码读取即可；需人工澄清上下文并等待确认。它不是漏洞利用工具或无漏洞证明。
 
+**跨工具使用：**方法可迁移：不强制某个 AI 品牌；目标工具须能读取所需文件、提供任务工具与权限。具体组合未运行验证。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**[完整练习草案](hands-on.md#security-threat-model)（待实测）。
+**下一步：**[获取这一项的材料](installation.md#fetch-openai--security-threat-model) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例；也可跟做[练习草案](hands-on.md#security-threat-model)。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[openai 原始维护仓库 / security-threat-model](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model) · [Apache-2.0](https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/LICENSE.txt) · [版本、依赖与完整风险](skills.md#openai--security-threat-model)。
 
@@ -582,9 +630,11 @@
 
 **额外工具与限制：**需 Git 与历史/源码；要有明确比较基线。插件集成不是独立核心必需条件，安全结论仍需复核。
 
+**跨工具使用：**方法可迁移，但 Git/历史是前提；可选命名子代理和 issue-writer 不假定目标客户端存在。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-trailofbits--differential-review) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[trailofbits 原始维护仓库 / differential-review](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/differential-review/skills/differential-review) · [CC-BY-SA-4.0](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) · [版本、依赖与完整风险](skills.md#trailofbits--differential-review)。
 
@@ -605,9 +655,11 @@
 
 **额外工具与限制：**依赖 CodeQL CLI、工具链等；许可独立，私有项目需有效授权。构建会执行项目代码，必须另获批准并隔离。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**有上游材料，但未进行本地验证；材料类型与范围见详情，不表示上游或客户端测试通过。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-trailofbits--codeql) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[trailofbits 原始维护仓库 / codeql](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/static-analysis/skills/codeql) · [CC-BY-SA-4.0](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) · [版本、依赖与完整风险](skills.md#trailofbits--codeql)。
 
@@ -628,9 +680,11 @@
 
 **额外工具与限制：**需 Python/uv、相应网络源，部分路径用已授权 gh。并非所有锁文件都支持，也不是许可证合规审计。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**有上游材料，但未进行本地验证；材料类型与范围见详情，不表示上游或客户端测试通过。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-trailofbits--supply-chain-risk-auditor) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[trailofbits 原始维护仓库 / supply-chain-risk-auditor](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor) · [CC-BY-SA-4.0](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) · [版本、依赖与完整风险](skills.md#trailofbits--supply-chain-risk-auditor)。
 
@@ -651,9 +705,11 @@
 
 **额外工具与限制：**需 YAML/源码读取，远程模式可需 gh；{baseDir} 等引用在独立客户端可能需适配。不能保证覆盖所有供应商。
 
+**跨工具使用：**先适配：非插件环境的 {baseDir} 与工具引用需核对；只读方法不运行 CI 或攻击示例。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**先核[本项适配条件](skills.md#trailofbits--agentic-actions-auditor)，再看[目标材料](installation.md#fetch-trailofbits--agentic-actions-auditor)及[客户端入口](client-guides.md#platform-picker)；获取不表示适配完成。
 
 **原始来源与注意事项：**[trailofbits 原始维护仓库 / agentic-actions-auditor](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/agentic-actions-auditor/skills/agentic-actions-auditor) · [CC-BY-SA-4.0](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) · [版本、依赖与完整风险](skills.md#trailofbits--agentic-actions-auditor)。
 
@@ -674,9 +730,11 @@
 
 **额外工具与限制：**需已确认根因；Git/搜索可做基本流程，可选扫描器需另核。不是首次漏洞发现或补丁正确性验证。
 
+**跨工具使用：**方法可迁移，但先有已确认根因；可选扫描器、并行插件和查询集不假定已就绪。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-trailofbits--variant-analysis) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[trailofbits 原始维护仓库 / variant-analysis](https://github.com/trailofbits/skills/tree/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/plugins/variant-analysis/skills/variant-analysis) · [CC-BY-SA-4.0](https://github.com/trailofbits/skills/blob/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0/LICENSE) · [版本、依赖与完整风险](skills.md#trailofbits--variant-analysis)。
 
@@ -700,9 +758,11 @@
 
 **额外工具与限制：**需已有前端实现环境；视觉效果依模型和任务。不是已验证的可访问性或性能审计。
 
+**跨工具使用：**方法可迁移：不强制某个 AI 品牌；目标工具须能读取所需文件、提供任务工具与权限。具体组合未运行验证。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-anthropics--frontend-design) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[anthropics 原始维护仓库 / frontend-design](https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design) · [Apache-2.0](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/LICENSE.txt) · [版本、依赖与完整风险](skills.md#anthropics--frontend-design)。
 
@@ -723,9 +783,11 @@
 
 **额外工具与限制：**需 Python 与相配 Gradio；没有验证过的完整版本组合。启动服务、上传文件、分享公网链接须分别允许。
 
+**跨工具使用：**工具前提：能否复用取决于下方运行环境、文件/网络能力与权限，不只取决于模型品牌；放入目录不会自动补齐工具。
+
 **使用状态：**只有本目录范围内静态审阅；此固定 Skill 的功能与客户端运行未验证。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**[获取这一项的材料](installation.md#fetch-huggingface--huggingface-gradio) → [选择你的 AI 工具](client-guides.md#platform-picker) → 加载后使用上方中文示例。依赖与结果仍待实际环境验证。
 
 **原始来源与注意事项：**[huggingface 原始维护仓库 / huggingface-gradio](https://github.com/huggingface/skills/tree/c3ff942be3e07116b475253f0a8fc4f54682c1a8/skills/huggingface-gradio) · [Apache-2.0](https://github.com/huggingface/skills/blob/c3ff942be3e07116b475253f0a8fc4f54682c1a8/LICENSE) · [版本、依赖与完整风险](skills.md#huggingface--huggingface-gradio)。
 
@@ -746,9 +808,11 @@
 
 **额外工具与限制：**需已有 React/Next.js 环境。源目录名与 Skill 名不同，引用有已知相对链接问题；MIT 与第三方材料边界保留。
 
+**跨工具使用：**先适配：目录/name 与部分相对引用不一致；匹配 React 版本和第三方权利条件，不声称复制即用。
+
 **使用状态：**有上游材料，但未进行本地验证；材料类型与范围见详情，不表示上游或客户端测试通过。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**先核[本项适配条件](skills.md#vercel-labs--react-best-practices)，再看[目标材料](installation.md#fetch-vercel-labs--react-best-practices)及[客户端入口](client-guides.md#platform-picker)；获取不表示适配完成。
 
 **原始来源与注意事项：**[vercel-labs 原始维护仓库 / vercel-react-best-practices](https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices) · [MIT](https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices/SKILL.md#L4) · [版本、依赖与完整风险](skills.md#vercel-labs--react-best-practices)。
 
@@ -769,9 +833,11 @@
 
 **额外工具与限制：**需已有 React 项目；React 19 规则不直接适用旧版。入口名需适配，第三方内容不自动取得 MIT 许可。
 
+**跨工具使用：**先适配：目录名与 vercel-composition-patterns 名称不同，React 19 规则不能套旧项目。
+
 **使用状态：**有上游材料，但未进行本地验证；材料类型与范围见详情，不表示上游或客户端测试通过。
 
-**下一步：**尚未建立该项完整实操教程；先核对下方详情中的依赖与采用门槛，再决定是否采用。
+**下一步：**先核[本项适配条件](skills.md#vercel-labs--composition-patterns)，再看[目标材料](installation.md#fetch-vercel-labs--composition-patterns)及[客户端入口](client-guides.md#platform-picker)；获取不表示适配完成。
 
 **原始来源与注意事项：**[vercel-labs 原始维护仓库 / vercel-composition-patterns](https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/composition-patterns) · [MIT](https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/composition-patterns/SKILL.md#L9) · [版本、依赖与完整风险](skills.md#vercel-labs--composition-patterns)。
 

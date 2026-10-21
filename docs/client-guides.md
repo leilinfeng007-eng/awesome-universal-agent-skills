@@ -1,10 +1,27 @@
 # 把一个 Skill 添加到你的 AI 工具
 
-这页适合已选好 Skill、准备查看添加方式的用户，提供 Codex App / CLI、Claude Code 和 OpenCode 的独立路径。还没选好办公或数据能力，先看[普通用户路径](quickstart.md#everyday)，无需先做项目练习。
+这页帮你把已经选好的 Skill 接入实际工具：Codex、OpenCode、Kimi Code、Qoder、QoderWork、WorkBuddy，以及 Claude Code。先选**具体产品和形态**，不要只看模型品牌。还没选好能力，先看[普通用户路径](quickstart.md#everyday)。
 
 **官方加载机制已核对；本文操作组合均为“教程待实际环境验证”**，未安装或调用第三方 Skill。想练习项目级添加的用户可跟做 [Codex App 完整案例](hands-on.md#create-readme)，其中建立隐藏目录有一次复制的系统命令，不是全程纯图形安装。
 
-只在自己新建的练习项目添加一个许可允许的 Skill。Anthropic Office 三项为受限参考，不参与以下步骤。其他条目也须满足[自身使用条件](usage.md)；不能把本页当作 32 项通用安装器。
+目录型入口优先使用独立练习项目；导入型客户端可能持久保存安装和启用状态，须自己明确选择单项，不接管已有资源。Anthropic Office 三项为受限参考，不参与以下步骤。其他条目也须满足[自身使用条件](usage.md)；本页不替代 Python、浏览器、OfficeCLI 等工具的准备。
+
+<a id="platform-picker"></a>
+## 你正在用哪个工具？
+
+| 工具 | 添加方式 | 调用入口 | 点这里继续 |
+|---|---|---|---|
+| Codex App / CLI | 项目 `.agents/skills/` | App 入口依版本；CLI `/skills`、`$` | [App](#codex-app) / [CLI](#codex-cli) |
+| OpenCode | 项目 `.opencode/skills/`，也支持 `.agents/skills/` | 原生 `skill` 工具 | [OpenCode 步骤](#opencode) |
+| Kimi Code CLI / Desktop | Git 项目 `.agents/skills/` 或 `.kimi-code/skills/` | `/skill:名称` | [Kimi Code 步骤](#kimi-code) |
+| Qoder IDE / CLI | 项目 `.qoder/skills/` | `/名称`；CLI 可 `/skills` | [Qoder 步骤](#qoder) |
+| QoderWork | “扩展 → 技能”导入 | `/` 选择或任务指名 | [QoderWork 步骤](#qoderwork) |
+| WorkBuddy 桌面版 | 技能面板上传单项技能包 | 新会话中指名 | [WorkBuddy 步骤](#workbuddy) |
+| Claude Code | 项目 `.claude/skills/` | `/名称` | [Claude Code 步骤](#claude-code) |
+
+**Kimi 网页、Kimi Code、Qoder IDE、新 Qoder 桌面和 QoderWork 不是同一入口。** 支持技能面板，不等于能读取电脑的 `.agents/skills`。本表仅是已核实的官方机制；本库没有因此完成任一条目的客户端运行验证。
+
+手里还没有 Skill 文件？先到[逐项获取入口](installation.md#get-files)，只取所选目标及必要资源，再回来选择客户端。首次可用[两个文件的练习](hands-on.md#readme-files)理解放置方法，但不需要为了正式工作安装这个练习项。
 
 <a id="layout"></a>
 ## 先认清项目文件夹
@@ -145,4 +162,65 @@ $create-readme
 | 手动复制、独立练习文件、移出单项撤销 | 本项目设计的操作方案；不属于官方运行认证 |
 | 写作、排障、核验、威胁报告结果 | 本文给出预期及失败判据；本轮全部未运行 |
 
-其他客户端：[机制资料](clients.md)。更深入的版本、许可、依赖和工具配对：[原有采用条件](installation.md)。
+<a id="kimi-code"></a>
+## Kimi Code CLI / Desktop
+
+**适合：**已经使用现行 Kimi Code 的用户。此处依据现行 `kimi-code` 文档，不套用旧 `kimi-cli` 的默认目录，也不要求升级现有客户端。
+
+1. 获取固定版本完整单项目录和许可。已有 Git 项目可选 `项目/.agents/skills/<name>/SKILL.md` 或 `项目/.kimi-code/skills/<name>/SKILL.md`，只选一处；项目根是工作目录向上最近包含 `.git` 的目录。不是在任何普通下载文件夹都保证得到相同项目发现结果。
+2. `<name>` 使用入口中的真实 `name`，保留相对资源。检查项目和用户入口有无同名项；存在就停止，不覆盖。
+3. CLI 用户在该项目重开已经可用的 `kimi` 会话；Desktop 用户打开同一项目。官方明确桌面版沿用目录机制；具体版本界面和本库条目运行待实测。
+4. 输入 `/` 查看，再用实际名称调用，例如：
+
+   ```text
+   /skill:systematic-debugging 只分析当前练习项目。先复现并给根因证据，不修改文件或安装软件；没有所需工具就说明未复现。
+   ```
+
+5. 分别核对可用列表、加载/读取记录、相对资源和结果。保留默认交互审批，不使用自动批准模式来完成教程。
+6. 撤销只移出本次添加的单项目录，再重开会话；不删除用户根目录，不改其他 Skill。
+
+**没有 Git 项目？** 官方有启动参数 `kimi --skills-dir ./local-skills`，但它会在本次启动**替换**默认项目及用户发现目录，不是追加。它属于进阶、待实测路线，不能不加说明地让新手使用。
+
+依据：[CLI Skill 文档](https://www.kimi.com/code/docs/kimi-code-cli/customization/skills.html)、[Desktop 扩展](https://www.kimi.com/code/docs/kimi-code-desktop/settings-and-extensions.html)、[启动参数](https://www.kimi.com/code/docs/en/kimi-code-cli/reference/kimi-command)、[权限与工具](https://www.kimi.com/code/docs/kimi-code-cli/reference/tools.html)。[旧版迁移说明](https://www.kimi.com/code/docs/kimi-code-cli/guides/migration.html)只用于辨别版本，不是本教程的升级要求。
+
+Kimi 网页 Agent 模式另有[技能面板](https://www.kimi.com/help/plugins-and-skills/use-skills-in-agent)，但本轮未确认本库任意 GitHub Skill 的完整网页导入路径。不要套用 CLI 目录；标记“本库导入未确认”。
+
+<a id="qoder"></a>
+## Qoder IDE / CLI
+
+**适合：**已经使用 Qoder 开发工具的用户。这里不是 QoderWork，也不是另一个新版 Qoder 桌面入口。
+
+1. 将合法获取的完整单项放入 `项目/.qoder/skills/<name>/`，保留 `SKILL.md`、资源与许可；先检查 `.qoder/skills/` 和用户 `~/.qoder/skills/` 是否同名，存在就停止复制。
+2. **IDE：**按官方文档重启 IDE，再在对话输入 `/` 查找；使用 `/skill-name` 或明确描述相符任务。
+3. **CLI：**在对应项目新开会话；现有会话可 `/skills reload`，用 `/skills` 查看，再 `/skill-name`。这些是 Qoder 输入框中的命令，不是 Shell 命令。
+4. 指名任务后核对实际加载记录及资源；脚本仍需本机对应运行环境与权限。条目出现不代表任务完成。
+5. 撤销只移出本次项目的单项，再按客户端刷新/重启；不删用户入口、插件或配置。
+
+**同名优先级不能混写。** 官方 IDE 页写项目优先，CLI 页写用户优先；本教程不依赖覆盖顺序，始终先查同名冲突。依据：[IDE Skills](https://docs.qoder.com/extensions/skills)、[CLI Skills](https://docs.qoder.com/cli/Skills)、[CLI 加载排查](https://docs.qoder.com/cli/troubleshoot-loading)。具体 Skill 与版本组合未运行。
+
+<a id="qoderwork"></a>
+## QoderWork：独立导入
+
+1. 先获得许可允许的完整单项材料。选择左侧“扩展 → 技能 → 安装技能”，按该页面要求上传 `SKILL.md` **以及所需辅助文件**，不要只上传入口漏掉资源。
+2. 导入前检查已安装列表是否重名，重名先停。QoderWork 使用独立 `~/.qoderwork/skills/` 入口，不能从 IDE 的 `.qoder/skills` 或 Codex 的 `.agents/skills` 推断它会直接共享。
+3. 确认列表中出现正确项，再输入 `/` 选择或在新任务中指名，随后检查实际加载、资源与结果。
+4. 持久导入、同名处理、是否改写内容和符号链接共享行为尚未验证。撤销只操作本次导入项；本轮没有核实所有版本删除按钮，不编造清理命令，不手工清空根目录。
+
+依据：[QoderWork 官方教程](https://docs.qoder.com/zh/qoderwork/skills)。其内置办公能力不代表本目录三项 Anthropic Office 材料因此获得服务外使用许可。
+
+如果你用的是**新版 Qoder 桌面**，另看[该产品的 Skills 文档](https://docs.qoder.com/qoder/skills)：入口为 Extensions → Skills → Add Skills → Upload Skill，可用 ZIP 或 `SKILL.md`。不要直接混用 IDE/Work 的按钮、目录和覆盖规则；本库组合仍待实测。
+
+<a id="workbuddy"></a>
+## WorkBuddy：技能包导入
+
+此处为腾讯 `workbuddy.cn` 的桌面产品，不套用 CodeBuddy CLI、其他同名工具或管理器中的目录映射。
+
+1. 在客户端打开“专家·技能·连接器 → 技能 → 添加技能 → 上传技能”，选择许可允许的**单项本地技能包**。该动作会持久安装，不是临时读文件。
+2. 先查已安装列表，重名不覆盖。官方用户页没有明确手工发现目录、压缩包层级或同名处理规则；本项目不能保证把任意 GitHub 文件夹随手压缩就能导入。没有可靠包格式依据时停在“打包适配待确认”，不改上游文件碰运气。
+3. 导入后在“已安装”确认启用，另开会话，明确指名，例如“请使用 systematic-debugging 分析当前工作空间的这个错误，先给证据，不修改文件”。这是自然语言调用请求；尚未确认该产品通用 `/skill-name` 语法。
+4. 看实际加载及结果；保持默认权限，先用工作空间副本。上传成功不证明脚本能运行，Python、Bash 等环境仍需另具备。
+5. 暂停时只关闭本次导入项并新开会话。官方说明旧会话可能仍保留已加载内容；不要删除其他技能、全局配置或同步数据。
+
+依据：[技能面板官方说明](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)、[权限模式](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Permission-Modes)。[开放平台 Skill 规范](https://open.workbuddy.cn/docs/skill)的中英文描述、版本和作者要求针对市场发布，不能未经确认就强加给本地导入或据此改写原始 Skill。
+
+**以上新增产品说明均为 2026-10-21 官方机制核对，不是客户端运行验收。** 想查看具体 Skill 的适用范围、依赖与适配点，返回[逐项介绍](usage.md)；其他产品见[机制总表](clients.md)。
