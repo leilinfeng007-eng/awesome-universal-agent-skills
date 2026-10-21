@@ -13,3 +13,5 @@ review/
 downloads/
 vendor/
 tmp/
+__pycache__/
+*.py[cod]
