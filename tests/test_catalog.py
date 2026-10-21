@@ -83,4 +83,15 @@ class CatalogTests(unittest.TestCase):
         for s in parsed['skills']:
             self.assertIn('noopener noreferrer',s['detail_html'])
 
+    def test_client_choice_selects_instructions_not_compatibility(self):
+        source=(ROOT/'tools/directory.html').read_text()
+        self.assertNotIn("filters.client &&",source)
+        self.assertIn('选择我的 AI 工具',source)
+        self.assertIn('不会筛掉 Skill',source)
+        self.assertIn("if (client) Array.from($('dialog-detail').querySelectorAll('details'))",source)
+
+    def test_chinese_repair_search_alias(self):
+        repair=next(s for s in self.data['skills'] if s['id']=='obra--systematic-debugging')
+        self.assertIn('修复错误',repair['tags'])
+
 if __name__=='__main__':unittest.main()

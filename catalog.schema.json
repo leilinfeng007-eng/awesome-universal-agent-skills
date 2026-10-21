@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/leilinfeng007-eng/awesome-universal-agent-skills/blob/redesign/skill-library/catalog.schema.json",
+  "$id": "https://github.com/leilinfeng007-eng/awesome-universal-agent-skills/blob/main/catalog.schema.json",
   "title": "Task-first Skill directory",
   "type": "object",
   "required": ["schema_version", "project", "categories", "levels", "clients", "skills", "archived"],

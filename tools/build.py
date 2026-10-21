@@ -167,7 +167,7 @@ def card_html(s,data):
     out+=p('没生效：核对项目、单层文件夹、同名入口，再开新会话。撤销：只移出本次新增单项，或禁用本次导入项。不要清空 skills 或客户端配置。')
     out+='<details><summary>固定版本、许可与证据</summary>'+p(u['commit'])+a(lic['skill_expression'],lic['skill_license_url'])+p(evidence(s))
     out+=''.join(p(x) for x in s['limitations'])+p('采用前提：'+s['adoption_gate'])+'</details>'
-    out+=p('手工获取、Windows/macOS 文件操作、完整许可和历史依据：')+a('打开完整 GitHub 卡片',REPO+'/blob/redesign/skill-library/'+s['detail_url'])
+    out+=p('手工获取、Windows/macOS 文件操作、完整许可和历史依据：')+a('打开完整 GitHub 卡片',REPO+'/blob/main/'+s['detail_url'])
     return out
 
 

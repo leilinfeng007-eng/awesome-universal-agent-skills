@@ -107,7 +107,7 @@
   <a class="skip" href="#results">跳到 Skill 目录</a>
   <div class="shell">
     <header class="masthead">
-      <a class="brand" href="https://github.com/leilinfeng007-eng/awesome-universal-agent-skills/tree/redesign/skill-library"><span class="brand-symbol" aria-hidden="true">✳</span>AGENT SKILLS 精选库</a>
+      <a class="brand" href="https://github.com/leilinfeng007-eng/awesome-universal-agent-skills/tree/main"><span class="brand-symbol" aria-hidden="true">✳</span>AGENT SKILLS 精选库</a>
       <span class="edition">在线目录 · 无需下载</span>
     </header>
     <main>
@@ -130,11 +130,11 @@
         <span id="search-help" class="sr-only">可以搜索中文需求、名称、标签和任务示例；多个关键词用空格分开。</span>
         <div class="filters">
           <div class="field"><label for="category">按任务找</label><select id="category"><option value="">全部任务</option></select></div>
-          <div class="field client-field"><label for="client">我使用的 AI 工具</label><select id="client"><option value="">先不选择</option></select></div>
+          <div class="field client-field"><label for="client">选择我的 AI 工具</label><select id="client"><option value="">先不选择</option></select></div>
           <div class="field"><label for="level">使用场景</label><select id="level"><option value="">优先了解 + 专项</option><option value="everyday">优先了解：从这些开始</option><option value="specialist">专项：有具体条件再选</option></select></div>
           <button class="clear" id="clear" type="button">清除筛选</button>
         </div>
-        <p class="client-note" id="client-note">先挑用途，再选 AI 工具。选择 AI 工具会切换配置说明，不能据此判断这个 Skill 已经在该工具中实测通过。</p>
+        <p class="client-note" id="client-note">先按用途搜索或筛选。选择 AI 工具只会切换详情中的配置路径与调用说明，不会筛掉 Skill，也不代表已在该工具中实测通过。</p>
       </section>
       <section id="results" aria-labelledby="results-title" tabindex="-1">
         <div class="results-heading"><h2 id="results-title">值得了解的 Skills</h2><span id="result-count" aria-live="polite" aria-atomic="true"></span></div>
@@ -142,7 +142,7 @@
         <div class="empty" id="empty" hidden><strong>暂时没有匹配的 Skill</strong>换成更短的关键词，例如“表格”“网页”或“调试”，也可以放宽筛选。<br><button type="button" class="clear" id="empty-clear">查看全部 Skill</button></div>
       </section>
     </main>
-    <footer><span>精选是为了帮助选择，收录不代表所有环境均可直接使用。</span><a href="https://github.com/leilinfeng007-eng/awesome-universal-agent-skills/tree/redesign/skill-library">查看 GitHub 上的这一版 ↗</a></footer>
+    <footer><span>精选是为了帮助选择，收录不代表所有环境均可直接使用。</span><a href="https://github.com/leilinfeng007-eng/awesome-universal-agent-skills/tree/main">查看 GitHub 上的这一版 ↗</a></footer>
   </div>
   <dialog id="skill-dialog" aria-labelledby="dialog-title">
     <div class="dialog-top"><span class="dialog-kicker" id="dialog-category"></span><button class="close" id="close-dialog" type="button" aria-label="关闭 Skill 详情">×</button></div>
@@ -167,7 +167,7 @@
     const skills = Array.isArray(catalog.skills) ? catalog.skills : [];
     const categories = catalog.categories || {};
     const clients = Array.isArray(catalog.clients) ? catalog.clients : [];
-    const githubPreviewBase = 'https://github.com/leilinfeng007-eng/awesome-universal-agent-skills/blob/redesign/skill-library/';
+    const githubPreviewBase = 'https://github.com/leilinfeng007-eng/awesome-universal-agent-skills/blob/main/';
     const byId = new Map(skills.map(skill => [skill.id, skill]));
     const $ = id => document.getElementById(id);
     const controls = { query:$('search'), category:$('category'), client:$('client'), level:$('level') };
@@ -179,7 +179,6 @@
       return items.filter(skill => {
         if (filters.category && skill.category !== filters.category) return false;
         if (filters.level && skill.level !== filters.level) return false;
-        if (filters.client && !(skill.clients || []).includes(filters.client)) return false;
         const text = [skill.id,skill.slug,skill.name,skill.title,skill.summary,skill.problem,skill.prompt,skill.audience,...(skill.tags || [])].filter(Boolean).join(' ').toLocaleLowerCase();
         return terms.every(term => text.includes(term));
       });
@@ -208,11 +207,11 @@
     function updateClientNote() {
       const client = clients.find(item => item.id === controls.client.value);
       if (!client) {
-        $('client-note').textContent = '先挑用途，再选 AI 工具。选择 AI 工具会切换配置说明，不能据此判断这个 Skill 已经在该工具中实测通过。';
+        $('client-note').textContent = '先按用途搜索或筛选。选择 AI 工具只会切换详情中的配置路径与调用说明，不会筛掉 Skill，也不代表已在该工具中实测通过。';
         return;
       }
       const route = client.mode === 'import' ? '通过客户端的导入或技能管理入口添加；具体包结构与入口见详情。' : '使用当前项目内的 ' + (client.directory || 'Skill') + '/ 目录；调用方式见详情。';
-      $('client-note').textContent = client.label + '：' + route + ' 此处表示配置路径，不表示已通过客户端运行测试。';
+      $('client-note').textContent = client.label + ' 配置预览：' + route + ' 此处只说明配置路径，不表示已通过客户端运行测试。';
     }
 
     function render() {
