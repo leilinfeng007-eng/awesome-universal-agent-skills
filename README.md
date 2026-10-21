@@ -1,154 +1,143 @@
-# Agent Skills 精选库｜让 AI 助手掌握更专业的工作方法
+# 真正用得上的 Agent Skills
 
-这里收集能解决实际问题的 Agent Skills：给 AI 的工作步骤、规则和配套资料。目的是让你为自己的任务找到值得用的那一项，再配置到正在使用的工具里，不必把整份清单全部安装。
+> 为 AI 加一份专门的做事指南：先找到要解决的事，再选适合你工具的那一项。
 
-**按这条路走：[找任务](#tasks) → [看用途与条件](docs/usage.md) → [获取文件](docs/installation.md#get-files) → [选你的 AI 工具](docs/client-guides.md#platform-picker) → [调用并核对结果](docs/quickstart.md#success)。**
+**20 项认真选择的 Skill，8 项优先了解，12 项专项选择。** 不堆数量，不要求先学 Git，也不把“能添加”写成“已运行成功”。
 
-想快速搜索？打开[全量介绍](docs/usage.md)，按 `Ctrl + F`（Mac 为 `Command + F`），搜索“Excel、排障、论文、网页”等任务或英文名称。办公用户可先看[不写代码的路径](docs/quickstart.md#everyday)。
+**[按任务找 ↓](#find) · [按 AI 工具找 ↓](#clients) · [第一次使用 ↓](#start) · [可搜索目录](#search)**
 
-> A curated guide to 32 Agent Skills: choose by task, follow beginner walkthroughs, and check actual loading and results. English readers: [client guide and official links](docs/client-guides.md#sources) · [pinned sources and details](docs/skills.md).
+想让 AI 改 Excel、排查错误、画图或做网页？这里帮你判断选谁、先准备什么，并在**一张卡片内**给出固定来源、添加路径、中文示例和撤销方法。下载的是原作者材料，本仓库不打包第三方 Skill。
 
-<a id="tasks"></a>
-## 我想让 AI 做什么？
+<a id="find"></a>
 
-| 我想做的事 | 先了解哪个 | 下一步点这里 |
-|---|---|---|
-| 处理 Word、Excel、PPT | OfficeCLI 三项分别处理文档、工作簿、演示文稿；需额外工具 | [先分清 Excel 分析与原生编辑](docs/quickstart.md#excel) · [Office 选择](docs/usage.md#office) |
-| 修复代码错误 | systematic-debugging：先复现、找根因，再提修复 | [调试案例](docs/hands-on.md#systematic-debugging) |
-| 分析数据、生成图表 | exploratory-data-analysis 检查数据；matplotlib 画图 | [数据选择与示例](docs/usage.md#data) |
-| 自动操作网页 | playwright-cli：测试页交互、截图与日志 | [使用条件与版本配对缺口](docs/usage.md#microsoft--playwright-cli) |
-| 制作网页 | frontend-design 帮你定视觉方向；React 项目再看性能规则 | [网页设计用途与示例](docs/usage.md#anthropics--frontend-design) |
-| 创建自己的 Agent 或 Skill | skill-creator 写工作手册；agent-architecture 设计 Agent；mcp-builder 设计工具接口 | [怎么选择](docs/usage.md#agent) |
-| 查找论文、整理资料 | huggingface-papers 读取指定 AI 论文及关联信息 | [研究用途与边界](docs/usage.md#research) |
-| 检查代码安全 | security-best-practices 看常见写法；security-threat-model 看应用风险 | [安全选择](docs/usage.md#security) |
+## 你想让 AI 帮什么忙？
 
-Office、浏览器和绘图通常需要额外工具。每项介绍会写清“可迁移的方法、工具前提、先适配或仅参考”，避免把找到入口当作已经能用。
+| 我想…… | 从这里开始 | 开始前知道 |
+| --- | --- | --- |
+| 看懂 CSV / TSV 数据 | [先看懂一份数据](skills/k-dense-ai--exploratory-data-analysis.md) | 需要 Python；先体检，不改原表 |
+| 把数据画成图 | [把数据画成清晰的图](skills/k-dense-ai--matplotlib.md) | 需要绘图环境；检查字体和数据 |
+| 读一批文档、提取文字 | [把文档变成 AI 易读的文字](skills/k-dense-ai--markitdown.md) | 提取内容，不保留原版式 |
+| 修改 Word、Excel、PPT | [Word](skills/iofficeai--officecli-docx.md) · [Excel](skills/iofficeai--officecli-xlsx.md) · [PPT](skills/iofficeai--officecli-pptx.md) | 专项：先准备 OfficeCLI，尚非即装即用 |
+| 让 AI 修复代码错误 | [让 AI 先找原因，再修代码](skills/obra--systematic-debugging.md) | 沿用项目日志和测试工具 |
+| 让网页更好看、更好维护 | [做一个有设计感的网页](skills/anthropics--frontend-design.md) · [React 性能](skills/vercel-labs--react-best-practices.md) · [组件结构](skills/vercel-labs--composition-patterns.md) | 后两项面向 React；无需 Vercel 账号 |
+| 查代码或依赖的安全风险 | [变更安全审查](skills/trailofbits--differential-review.md) · [依赖风险](skills/trailofbits--supply-chain-risk-auditor.md) | 不能代替专业验收；外发数据先确认 |
+| 创建 Agent 或工具接口 | [Agent 设计](skills/github--agent-architecture.md) · [MCP 接口](skills/anthropics--mcp-builder.md) | 面向开发者，不是现成服务 |
+| 读 AI 论文 | [论文与关联资料](skills/huggingface--huggingface-papers.md) | 需要联网，只读公开资料 |
 
-## 选你正在使用的 AI 工具
+**想自动操作网页？** 目前没有给新手推荐可复现的固定组合；[原 Playwright CLI 记录](archive/README.md)保留供参考，不用其他能力冒充浏览器自动化。
 
-[Codex App / CLI](docs/client-guides.md#codex-app) · [OpenCode](docs/client-guides.md#opencode) · [Kimi Code CLI / Desktop](docs/client-guides.md#kimi-code) · [Qoder IDE / CLI](docs/client-guides.md#qoder) · [QoderWork](docs/client-guides.md#qoderwork) · [WorkBuddy](docs/client-guides.md#workbuddy) · [Claude Code](docs/client-guides.md#claude-code)
+<a id="start"></a>
 
-来源是 OpenAI 或 Anthropic，不等于只能在对应公司的客户端使用。反过来，客户端支持 Skill，也不保证所有脚本和工具都能运行。[具体产品、添加方式和调用入口](docs/client-guides.md#platform-picker)分别说明；Kimi 网页与 Kimi Code、Qoder 与 QoderWork 不混用。
+## 第一次用，从这里开始
 
-## 第一次使用？选适合你的路线
+Skill 通常是一个带 `SKILL.md` 的文件夹，告诉 AI 如何完成特定任务；它不会自动给电脑装好 Python、Office 或其他工具。
 
-| 你现在的情况 | 从哪里开始 | 这条路能帮你完成什么 |
-|---|---|---|
-| 我主要处理文档或数据，不写代码 | [普通用户入门](docs/quickstart.md#everyday) | 按任务选 Skill、判断是否需要额外工具；不要求先做编程练习 |
-| 我是开发者，想亲手添加一个 Skill | [Codex App 跟做案例](docs/hands-on.md#create-readme) | 获取固定文件、放入练习项目、请求加载并检查结果 |
-| 我已经选好 Skill，要配置到已有工具 | [客户端选择表](docs/client-guides.md#platform-picker) | 包括 Codex、OpenCode、Kimi、Qoder、QoderWork、WorkBuddy 等具体路径 |
+1. **先看卡片的“适合我吗”和“开始前要有什么”。** 普通办公用户可以先看上面的文档/数据入口；开发者可从[系统排障](skills/obra--systematic-debugging.md)开始。缺工具就先停，不必照抄命令。
 
-共同顺序是：**选任务 → 看条件 → 按客户端添加或使用已有能力 → 检查发现、加载和结果**。没有匹配工具时先停在条件确认，不必为了读本库安装一套开发环境。[怎么确认真的生效？](docs/quickstart.md#success)
+2. **在同一张卡片展开你使用的 AI 工具。** 直接复制准备任务，让 AI 只获取固定单项；也可按卡片手工下载。已有同名项时停止。
 
-## 有对应需求时，先看这四项
+3. **按该工具的方式加载，再复制中文任务试一个副本。** 请 AI 说出实际读取的文件路径，核对真正生成的结果。能说出名字不等于已经生效。
 
-| Skill | 实际价值 | 使用条件 | 下一步 |
-|---|---|---|---|
-| systematic-debugging | 先复现、找根因，减少猜着改代码 | 方法低依赖；需要已有复现工具，模型行为未实测 | [用途、获取与示例](docs/usage.md#obra--systematic-debugging) |
-| exploratory-data-analysis | 检查小型数据的缺失、重复、异常 | Python 3.11+；有限核心样例有结果，非原生 Excel 编辑 | [数据体检](docs/usage.md#k-dense-ai--exploratory-data-analysis) |
-| frontend-design | 为网页确定视觉方向与排版 | 不限定某个 AI 品牌；实现与视觉效果未实测 | [网页设计](docs/usage.md#anthropics--frontend-design) |
-| security-best-practices | 为支持的语言检查常见代码安全做法 | 有源码读取能力；不等于完整扫描或安全认证 | [只读安全审阅](docs/usage.md#openai--security-best-practices) |
+不会操作也没关系：把卡片的准备任务交给当前 AI。若它没有网络/文件权限，卡片会提供原文件入口；不要让它凭空补出资源。所有添加说明均待各客户端实际验收。
 
-想先理解文件如何添加，可选 [create-readme 两文件练习](docs/hands-on.md#create-readme)；它是轻量写作参考，不代表每个人都需要单独安装。已有能力够用就不重复添加。
+<a id="clients"></a>
 
-## 这些资源的质量和通用性，能确认到哪一步？
+## 我使用的是哪个 AI 工具？
 
-32 项都有原始来源、固定版本、用途、许可和限制记录，但它们包含方法、工具专项和参考资料，不能整体承诺“稳定即用”。已有运行证据主要是 EDA 的有限本地核心样例；本库全部条目都没有跨客户端端到端通过记录。
+来源公司不是使用限制。下面按**官方发现或导入机制**分组；每项仍要满足自己的工具条件，不代表我们已逐项实测。
 
-选择时看三件事：**有没有独立实用价值、我的环境是否具备条件、结果能否核对**。方法型更容易迁移；工具型要准备依赖；路径/插件绑定项先适配；Anthropic Office 三项仅受限参考。推荐等级保持不变，[具体依据在这里](docs/validation.md)。
+| 工具 | 这份目录怎么用 |
+| --- | --- |
+| [Codex App / CLI](docs/clients.md#codex) | 项目内 `.agents/skills/技能名/`；卡片内有专属步骤 |
+| [OpenCode](docs/clients.md#opencode) | 项目内 `.agents/skills/技能名/`；卡片内有专属步骤 |
+| [Claude Code](docs/clients.md#claude) | 项目内 `.claude/skills/技能名/`；卡片内有专属步骤 |
+| [Cursor](docs/clients.md#cursor) | 项目内 `.agents/skills/技能名/`；卡片内有专属步骤 |
+| [Kimi Code](docs/clients.md#kimi) | 项目内 `.agents/skills/技能名/`；卡片内有专属步骤 |
+| [Qoder IDE / CLI](docs/clients.md#qoder) | 项目内 `.qoder/skills/技能名/`；卡片内有专属步骤 |
+| [QoderWork](docs/clients.md#qoderwork) | 独立技能面板导入；包格式/资源保留待验证；卡片内有专属步骤 |
+| [WorkBuddy](docs/clients.md#workbuddy) | 独立技能面板导入；包格式/资源保留待验证；卡片内有专属步骤 |
 
-## 完整目录：32 项，八个领域
+<a id="search"></a>
 
-点击“介绍与示例”看通俗用途、场景、额外工具、使用限制和原始 GitHub 来源；详细安装只对有明确方案的案例提供。
+## 查找与筛选
 
-<a id="office"></a>
-### 办公文档（8）
+- **直接在 GitHub 用：** 下方按任务浏览；电脑按 `Ctrl + F`（Mac：`Command + F`）搜索中文任务或英文名称。
 
-| Skill | 中文用途 | 适合谁 | 使用指南 |
-|---|---|---|---|
-| markitdown | 把文档转成可读文本 | 文档处理开发者 | [介绍与示例](docs/usage.md#k-dense-ai--markitdown) |
-| pdf (OpenAI) | 生成并检查 PDF | 文档人员/开发者 | [介绍与示例](docs/usage.md#openai--pdf) |
-| officecli-docx | 用命令工具修改 Word | 办公技术人员 | [介绍与示例](docs/usage.md#iofficeai--officecli-docx) |
-| officecli-xlsx | 用命令工具修改 Excel | 办公技术人员 | [介绍与示例](docs/usage.md#iofficeai--officecli-xlsx) |
-| officecli-pptx | 用命令工具修改 PPT | 办公技术人员 | [介绍与示例](docs/usage.md#iofficeai--officecli-pptx) |
-| docx (Anthropic) **仅受限参考** | 了解 Anthropic 的 Word 方法（受限参考） | 比较 Office 处理方法的读者 | [介绍，不提供安装](docs/usage.md#anthropics--docx) |
-| xlsx (Anthropic) **仅受限参考** | 了解 Anthropic 的 Excel 方法（受限参考） | 比较 Excel 技术路线的读者 | [介绍，不提供安装](docs/usage.md#anthropics--xlsx) |
-| pptx (Anthropic) **仅受限参考** | 了解 Anthropic 的 PPT 方法（受限参考） | 比较演示文稿方法的读者 | [介绍，不提供安装](docs/usage.md#anthropics--pptx) |
+- **想搜索、按任务与门槛筛选，并选择 AI 配置路径：** [下载离线目录](https://raw.githubusercontent.com/leilinfeng007-eng/awesome-universal-agent-skills/redesign/skill-library/index.html)（右键链接另存为 `index.html`），双击打开即可。内置搜索和完整卡片，**无依赖、无追踪、不发送搜索词**。GitHub 文件页只显示 HTML 源码，这不是已部署的网站。
 
-<a id="data"></a>
-### 数据与图表（3）
+<a id="all"></a>
 
-| Skill | 中文用途 | 适合谁 | 使用指南 |
-|---|---|---|---|
-| exploratory-data-analysis | 数据体检 | 数据分析人员 | [介绍与示例](docs/usage.md#k-dense-ai--exploratory-data-analysis) |
-| matplotlib | 把数据画成图 | 有 Python 环境的数据人员 | [介绍与示例](docs/usage.md#k-dense-ai--matplotlib) |
-| jupyter-notebook | 整理可复现的分析笔记 | Jupyter 用户 | [介绍与示例](docs/usage.md#openai--jupyter-notebook) |
+## 全部当前推荐
 
-<a id="development"></a>
-### 开发工程（4）
+“优先了解”表示用途常见、入口相对清楚；“专项选择”表示需要更多工具或有特定场景。它们不是测试成绩。
 
-| Skill | 中文用途 | 适合谁 | 使用指南 |
-|---|---|---|---|
-| systematic-debugging | 有条理地排障 | 能读基本代码的开发者 | [介绍与示例](docs/usage.md#obra--systematic-debugging) |
-| gh-fix-ci | 排查 GitHub 自动检查失败 | 已有 GitHub 项目权限的开发者 | [介绍与示例](docs/usage.md#openai--gh-fix-ci) |
-| create-readme | 给项目写说明书 | 项目作者 | [介绍与示例](docs/usage.md#github--create-readme) |
-| property-based-testing | 用通用性质设计测试 | 已有测试环境的开发者 | [介绍与示例](docs/usage.md#trailofbits--property-based-testing) |
+### 处理 Word、Excel、PPT / 文档
 
-<a id="automation"></a>
-### 自动化（1）
+| Skill / 用途 | 选择条件 |
+| --- | --- |
+| [把文档变成 AI 易读的文字](skills/k-dense-ai--markitdown.md)<br><sub>markitdown · 优先了解</sub> | 提取内容，不保留 Word/PPT 原版式；K-Dense 指南使用 Microsoft 工具。 |
+| [按对象修改 Word 文档](skills/iofficeai--officecli-docx.md)<br><sub>officecli-docx · 专项选择</sub> | 尚非添加即用；复杂分页、字段与修订效果要检查副本。 |
+| [修改 Excel 单元格、公式和图表](skills/iofficeai--officecli-xlsx.md)<br><sub>officecli-xlsx · 专项选择</sub> | 不保证复杂公式、宏、缓存与 Excel 引擎完全一致。 |
+| [按模板修改 PPT 内容与图表](skills/iofficeai--officecli-pptx.md)<br><sub>officecli-pptx · 专项选择</sub> | 母版、动画、字体和实际版面仍需核对；先改副本。 |
 
-| Skill | 中文用途 | 适合谁 | 使用指南 |
-|---|---|---|---|
-| playwright-cli | 让 AI 操作测试网页 | 有测试环境的开发者和测试人员 | [介绍与示例](docs/usage.md#microsoft--playwright-cli) |
+### 看数据、做图表
 
-<a id="agent"></a>
-### Agent 通用能力（4）
+| Skill / 用途 | 选择条件 |
+| --- | --- |
+| [先看懂一份数据](skills/k-dense-ai--exploratory-data-analysis.md)<br><sub>exploratory-data-analysis · 优先了解</sub> | 先做数据体检，不直接改 Excel；JSON 仅做结构画像。 |
+| [把数据画成清晰的图](skills/k-dense-ai--matplotlib.md)<br><sub>matplotlib · 优先了解</sub> | 适合静态图；必须另查字体、标注、裁切和输出覆盖。 |
 
-| Skill | 中文用途 | 适合谁 | 使用指南 |
-|---|---|---|---|
-| mcp-builder | 为 AI 设计工具接口 | 已有 API 需求的开发者 | [介绍与示例](docs/usage.md#anthropics--mcp-builder) |
-| skill-creator (OpenAI) | 编写自己的 Skill | 工作流维护者 | [介绍与示例](docs/usage.md#openai--skill-creator) |
-| verification-before-completion | 完成前先看证据 | 开发/交付人员 | [介绍与示例](docs/usage.md#obra--verification-before-completion) |
-| agent-architecture | 设计 AI Agent 的工作结构 | 准备开发 Agent 的工程人员 | [介绍与示例](docs/usage.md#github--agent-architecture) |
+### 修错误、补测试
 
-<a id="research"></a>
-### 信息研究（1）
+| Skill / 用途 | 选择条件 |
+| --- | --- |
+| [让 AI 先找原因，再修代码](skills/obra--systematic-debugging.md)<br><sub>systematic-debugging · 优先了解</sub> | 先复现，再拿证据验证一个原因；不会代替项目测试。 |
+| [让测试发现更多边界问题](skills/trailofbits--property-based-testing.md)<br><sub>property-based-testing · 优先了解</sub> | 围绕不变量生成用例；不能替代业务验收。入口 effort 字段可能需适配。 |
 
-| Skill | 中文用途 | 适合谁 | 使用指南 |
-|---|---|---|---|
-| huggingface-papers | 读取 AI 论文资料 | 主要阅读 AI/计算机论文的研究者 | [介绍与示例](docs/usage.md#huggingface--huggingface-papers) |
+### 做网页与交互界面
 
-<a id="security"></a>
-### 安全与质量（7）
+| Skill / 用途 | 选择条件 |
+| --- | --- |
+| [做一个有设计感的网页](skills/anthropics--frontend-design.md)<br><sub>frontend-design · 优先了解</sub> | 不限定 React 或模型品牌；审美建议不等于无障碍验收。 |
+| [检查 React 与 Next.js 性能写法](skills/vercel-labs--react-best-practices.md)<br><sub>vercel-react-best-practices · 优先了解</sub> | 先选与项目版本匹配的规则，不承诺测得提速。 |
+| [整理越来越复杂的 React 组件](skills/vercel-labs--composition-patterns.md)<br><sub>vercel-composition-patterns · 优先了解</sub> | 用组合设计组件边界，不为简单组件强加架构。 |
+| [给 Python 功能做一个演示界面](skills/huggingface--huggingface-gradio.md)<br><sub>huggingface-gradio · 专项选择</sub> | 不默认公开分享、上传数据或连接收费模型。 |
 
-| Skill | 中文用途 | 适合谁 | 使用指南 |
-|---|---|---|---|
-| security-best-practices | 检查常见代码安全问题 | 相关语言开发者 | [介绍与示例](docs/usage.md#openai--security-best-practices) |
-| security-threat-model | 画清应用面临的安全风险 | 开发/安全人员 | [介绍与示例](docs/usage.md#openai--security-threat-model) |
-| differential-review | 重点审查代码变更的安全影响 | 代码审查者 | [介绍与示例](docs/usage.md#trailofbits--differential-review) |
-| codeql | 规划和检查 CodeQL 扫描 | 有受控扫描环境的安全工程师 | [介绍与示例](docs/usage.md#trailofbits--codeql) |
-| supply-chain-risk-auditor | 检查软件依赖的风险信号 | 开发/安全人员 | [介绍与示例](docs/usage.md#trailofbits--supply-chain-risk-auditor) |
-| agentic-actions-auditor | 检查 AI 自动工作流的输入与权限 | CI 维护者 | [介绍与示例](docs/usage.md#trailofbits--agentic-actions-auditor) |
-| variant-analysis | 寻找同一根因的其他实例 | 已掌握明确漏洞根因的安全人员 | [介绍与示例](docs/usage.md#trailofbits--variant-analysis) |
+### 创建 Agent 与工具接口
 
-<a id="design"></a>
-### 前端与设计（4）
+| Skill / 用途 | 选择条件 |
+| --- | --- |
+| [给 AI 做一个能用的工具接口](skills/anthropics--mcp-builder.md)<br><sub>mcp-builder · 专项选择</sub> | 先设计输入、错误处理与评估，再实现；不默认部署。 |
+| [先想清楚 Agent 怎么分工与停下](skills/github--agent-architecture.md)<br><sub>agent-architecture · 专项选择</sub> | 先给边界、预算和停止条件，不自动实施、部署或训练。 |
 
-| Skill | 中文用途 | 适合谁 | 使用指南 |
-|---|---|---|---|
-| frontend-design | 设计有明确风格的网页 | 前端开发者与设计协作人员 | [介绍与示例](docs/usage.md#anthropics--frontend-design) |
-| huggingface-gradio | 搭建简单交互演示界面 | 有 Python 环境的开发者和研究者 | [介绍与示例](docs/usage.md#huggingface--huggingface-gradio) |
-| vercel-react-best-practices | 检查 React 页面性能写法 | React 开发者 | [介绍与示例](docs/usage.md#vercel-labs--react-best-practices) |
-| vercel-composition-patterns | 整理 React 组件接口 | 维护 React 组件库的开发者 | [介绍与示例](docs/usage.md#vercel-labs--composition-patterns) |
+### 读论文与找资料
 
-## 遇到问题与进阶资料
+| Skill / 用途 | 选择条件 |
+| --- | --- |
+| [读取 AI 论文与关联资料](skills/huggingface--huggingface-papers.md)<br><sub>huggingface-papers · 专项选择</sub> | 仅推荐公共读取，不执行作者认领、索引等写操作。 |
 
-[找不到 / 没调用 / 缺工具 / 重名 / 安全撤销](docs/quickstart.md#faq) · [如何确认真的生效](docs/quickstart.md#success)
+### 查代码与依赖风险
 
-需要精确选择时再看：[同类比较](docs/comparisons.md) · [固定来源、许可证和依赖](docs/skills.md) · [采用门槛与回滚](docs/installation.md) · [其他客户端机制](docs/clients.md) · [验证证据 E1～E4](docs/validation.md)。
+| Skill / 用途 | 选择条件 |
+| --- | --- |
+| [检查一次代码改动的安全风险](skills/trailofbits--differential-review.md)<br><sub>differential-review · 专项选择</sub> | 只读审查；不运行被审项目脚本，可选子代理不默认可用。 |
+| [找到同一漏洞的其他藏身处](skills/trailofbits--variant-analysis.md)<br><sub>variant-analysis · 专项选择</sub> | 没有已确认实例时先排障；限制搜索范围和迭代次数。 |
+| [看看项目依赖有没有风险信号](skills/trailofbits--supply-chain-risk-auditor.md)<br><sub>supply-chain-risk-auditor · 专项选择</sub> | 会向公开服务查询包名与版本；私有依赖先确认是否可外发。 |
+| [检查 GitHub Actions 中 AI 的权限风险](skills/trailofbits--agentic-actions-auditor.md)<br><sub>agentic-actions-auditor · 专项选择</sub> | 分析攻击路径，不执行示例攻击命令，不运行 CI。 |
+| [用 CodeQL 深入查代码漏洞](skills/trailofbits--codeql.md)<br><sub>codeql · 专项选择</sub> | 构建会执行项目代码；先确认授权和受控环境，不面向零基础。 |
 
-原创导览采用 [CC BY 4.0](LICENSE)，不替代[第三方许可与权利边界](LICENSE-NOTICE.md)。Anthropic Office 三项仅限原创介绍与原链导航，不提供未经授权的源码提取、外部安装执行或再分发路线。
+## 我们怎样做选择
 
-目录事实沿用已批准的 V1.1：精选 7、按需/专项 18、参考 7（受限参考 3）。新增 21 项没有本地功能或客户端端到端通过记录；既有 EDA 仅有有限核心样例，范围见验证说明。本轮只改善使用指南，不改变这些结论。
+看独立实用价值、原始维护方、资源是否完整、必要工具与长期获取条件；不按 Stars 排名。能清楚说明适用场景和限制，才放进当前目录。相似但用途不同的项可以并列；暂停推荐的内容保留在[历史参考区](archive/README.md)。
 
-维护者入口：[收录原则](docs/selection-policy.md) · [贡献方法](CONTRIBUTING.md) · [结构化目录](catalog.json) · [数据约束](catalog.schema.json)。
+**验证说清楚：** 只有 EDA 的受限核心有历史本地合成样例记录；本轮没有安装或运行第三方 Skill，所有条目的跨客户端运行仍未验证。每张卡片可展开原始证据，不把推荐当成功保证。
+
+## 维护与来源
+
+[怎么贡献和更新](CONTRIBUTING.md) · [数据与构建方式](docs/maintenance.md) · [结构化目录](catalog.json) · [许可证边界](LICENSE-NOTICE.md) · [历史参考](archive/README.md)
+
+原创导览采用 CC BY 4.0；原创构建代码采用 MIT。第三方 Skill 和依赖保留各自许可，仓库不镜像它们的代码。
+
+---
+
+**English:** A carefully curated, Chinese-first guide to practical Agent Skills. Find a task, understand the prerequisites, and get a pinned-source setup and usage card for your AI tool. Optional offline search; no backend, tracking, or bundled third-party Skills.
