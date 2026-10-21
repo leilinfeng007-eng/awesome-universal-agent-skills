@@ -1,5 +1,7 @@
 # Skill 条目详情
 
+[先看通俗用途与中文示例](usage.md)，再查本页固定版本、依赖与完整边界。
+
 本页与 catalog.json 的 **32 项**一一对应，按下方分类索引查找。完整 Commit 是审阅基线，不是最佳稳定版认证。推荐/参考定位、安装授权和运行证据互不替代；新增 21 项 function=not_tested，所有条目 cross_client_runtime=not_verified。
 
 受限参考条目仅供原创介绍与原链查询，[一般获取步骤](installation.md)不适用于它们。比较技术路线见[同类选择指南](comparisons.md)。
