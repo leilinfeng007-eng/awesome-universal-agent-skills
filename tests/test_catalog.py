@@ -67,14 +67,18 @@ class CatalogTests(unittest.TestCase):
     def test_home_tables_are_contiguous(self):
         self.assertNotRegex((ROOT/'README.md').read_text(),r'\|\n\n\|')
 
-    def test_page_is_offline_and_embedded_json_safe(self):
+    def test_page_is_self_contained_and_embedded_json_safe(self):
         page=(ROOT/'index.html').read_text()
+        self.assertIn('在线目录 · 无需下载',page)
+        self.assertIn('完整任务示例',page)
         self.assertNotRegex(page,r'<script[^>]+src=')
         self.assertNotRegex(page,r'<link[^>]+(?:href=|rel="stylesheet")')
         self.assertNotRegex(page,r'\b(?:fetch|XMLHttpRequest)\s*\(')
         embedded=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',page,re.S).group(1)
         parsed=json.loads(embedded)
         self.assertEqual(20,len(parsed['skills']))
+        self.assertTrue(all(len(s['prompt']) >= 300 for s in parsed['skills']))
+        self.assertEqual(20,len({s['prompt'] for s in parsed['skills']}))
         self.assertNotIn('<',embedded)
         for s in parsed['skills']:
             self.assertIn('noopener noreferrer',s['detail_html'])

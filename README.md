@@ -63,7 +63,7 @@ Skill 通常是一个带 `SKILL.md` 的文件夹，告诉 AI 如何完成特定�
 
 - **直接在 GitHub 用：** 下方按任务浏览；电脑按 `Ctrl + F`（Mac：`Command + F`）搜索中文任务或英文名称。
 
-- **想搜索、按任务与门槛筛选，并选择 AI 配置路径：** [下载离线目录](https://raw.githubusercontent.com/leilinfeng007-eng/awesome-universal-agent-skills/redesign/skill-library/index.html)（右键链接另存为 `index.html`），双击打开即可。内置搜索和完整卡片，**无依赖、无追踪、不发送搜索词**。GitHub 文件页只显示 HTML 源码，这不是已部署的网站。
+- **想搜索、按任务与门槛筛选，并选择 AI 配置路径：** [打开在线 Skill 目录](https://leilinfeng007-eng.github.io/awesome-universal-agent-skills/)，无需下载文件。搜索词只在本机浏览器内处理，无后端或追踪。
 
 <a id="all"></a>
 
@@ -140,4 +140,4 @@ Skill 通常是一个带 `SKILL.md` 的文件夹，告诉 AI 如何完成特定�
 
 ---
 
-**English:** A carefully curated, Chinese-first guide to practical Agent Skills. Find a task, understand the prerequisites, and get a pinned-source setup and usage card for your AI tool. Optional offline search; no backend, tracking, or bundled third-party Skills.
+**English:** A carefully curated, Chinese-first guide to practical Agent Skills. Find a task, understand the prerequisites, and get a pinned-source setup and usage card for your AI tool. Optional online search; no backend, tracking, or bundled third-party Skills.

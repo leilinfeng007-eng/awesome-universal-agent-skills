@@ -206,7 +206,7 @@ def readme(data):
         out.append(f'| [{c["label"]}](docs/clients.md#{c["id"]}) | {text}；卡片内有专属步骤 |')
     out += ['<a id="search"></a>','## 查找与筛选',
             '- **直接在 GitHub 用：** 下方按任务浏览；电脑按 `Ctrl + F`（Mac：`Command + F`）搜索中文任务或英文名称。',
-            '- **想搜索、按任务与门槛筛选，并选择 AI 配置路径：** [下载离线目录](https://raw.githubusercontent.com/leilinfeng007-eng/awesome-universal-agent-skills/redesign/skill-library/index.html)（右键链接另存为 `index.html`），双击打开即可。内置搜索和完整卡片，**无依赖、无追踪、不发送搜索词**。GitHub 文件页只显示 HTML 源码，这不是已部署的网站。',
+            '- **想搜索、按任务与门槛筛选，并选择 AI 配置路径：** [打开在线 Skill 目录](https://leilinfeng007-eng.github.io/awesome-universal-agent-skills/)，无需下载文件。搜索词只在本机浏览器内处理，无后端或追踪。',
             '<a id="all"></a>','## 全部当前推荐',
             '“优先了解”表示用途常见、入口相对清楚；“专项选择”表示需要更多工具或有特定场景。它们不是测试成绩。']
     for key,label in data['categories'].items():
@@ -221,7 +221,7 @@ def readme(data):
             '[怎么贡献和更新](CONTRIBUTING.md) · [数据与构建方式](docs/maintenance.md) · [结构化目录](catalog.json) · [许可证边界](LICENSE-NOTICE.md) · [历史参考](archive/README.md)',
             '原创导览采用 CC BY 4.0；原创构建代码采用 MIT。第三方 Skill 和依赖保留各自许可，仓库不镜像它们的代码。',
             '---',
-            '**English:** A carefully curated, Chinese-first guide to practical Agent Skills. Find a task, understand the prerequisites, and get a pinned-source setup and usage card for your AI tool. Optional offline search; no backend, tracking, or bundled third-party Skills.']
+            '**English:** A carefully curated, Chinese-first guide to practical Agent Skills. Find a task, understand the prerequisites, and get a pinned-source setup and usage card for your AI tool. Optional online search; no backend, tracking, or bundled third-party Skills.']
     return re.sub(r'(?m)^(\|[^\n]*\|)\n\n(?=\|)', r'\1\n', '\n\n'.join(out))+'\n'
 
 
